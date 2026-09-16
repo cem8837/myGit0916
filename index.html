@@ -428,6 +428,157 @@
     .rpg-sidebar select option { color: #3d2c20; }
 
     .log-panel { background: linear-gradient(180deg, rgba(255,252,239,0.96), rgba(235, 216, 173, 0.92)); }
+
+    :root {
+      --steam-ink: #18262a;
+      --steam-deep: #102024;
+      --steam-blue: #213c43;
+      --steam-brass: #c89645;
+      --steam-gold: #f2c765;
+      --steam-copper: #a96845;
+      --steam-teal: #73c2b0;
+      --steam-paper: #e8d7ae;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(202, 151, 71, 0.28), transparent 23%),
+        radial-gradient(circle at 88% 90%, rgba(63, 129, 122, 0.2), transparent 27%),
+        linear-gradient(145deg, #101e23 0%, #1b3035 45%, #263f42 100%);
+      color: var(--steam-paper);
+      font-family: 'Trebuchet MS', 'Microsoft JhengHei', sans-serif;
+    }
+
+    body::before {
+      background:
+        linear-gradient(rgba(242, 199, 101, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(242, 199, 101, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.55;
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(34, 57, 61, 0.98), rgba(18, 34, 39, 0.98));
+      border: 2px solid var(--steam-brass);
+      border-radius: 10px;
+      box-shadow: 0 0 0 4px rgba(10, 19, 22, 0.6), 0 16px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 222, 135, 0.28);
+    }
+
+    .glass-card::after {
+      content: "⚙";
+      position: absolute;
+      right: -0.7rem;
+      bottom: -1.25rem;
+      color: rgba(200, 150, 69, 0.12);
+      font-size: 5.5rem;
+      pointer-events: none;
+    }
+
+    .hud-bar {
+      background: linear-gradient(180deg, #2e4a4c, #172b30);
+      border-color: var(--steam-brass);
+      border-radius: 10px;
+      box-shadow: 0 7px 0 rgba(8, 14, 16, 0.6), 0 18px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(242, 199, 101, 0.3);
+    }
+
+    .game-logo { color: var(--steam-gold); }
+
+    .game-logo-mark {
+      background: radial-gradient(circle, #f8d77b 0 26%, #a66b36 28% 62%, #503824 64% 100%);
+      border-color: var(--steam-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(46, 29, 18, 0.65), 0 4px 0 #68442a;
+    }
+
+    .hud-pill {
+      border-color: rgba(242, 199, 101, 0.32);
+      background: rgba(8, 19, 22, 0.38);
+      color: #b6c7bd;
+    }
+
+    .hud-pill strong { color: var(--steam-teal); }
+
+    .mission-badge {
+      background: linear-gradient(180deg, #b9784d, #70452f);
+      border-color: var(--steam-gold);
+      border-radius: 8px;
+      box-shadow: 0 4px 0 rgba(15, 12, 10, 0.4);
+    }
+
+    .mission-badge span { color: #f6d98a; }
+    .mission-badge strong { color: #fff0bc; }
+
+    .rpg-sidebar {
+      background: linear-gradient(145deg, rgba(31, 55, 58, 0.99), rgba(14, 28, 33, 0.99));
+      border-color: var(--steam-copper);
+    }
+
+    .rpg-sidebar .panel-title h2,
+    .rpg-sidebar .field label { color: var(--steam-gold); }
+
+    .rpg-sidebar .panel-title { border-bottom-color: rgba(242, 199, 101, 0.3); }
+
+    .rpg-sidebar .panel-tag {
+      background: rgba(82, 168, 148, 0.2);
+      border-color: var(--steam-teal);
+      color: #a7e7d3;
+      border-radius: 5px;
+    }
+
+    .quest-nav-item {
+      border-color: rgba(242, 199, 101, 0.28);
+      border-radius: 6px;
+      background: rgba(8, 20, 24, 0.4);
+      color: #c6b883;
+    }
+
+    .quest-nav-item.active {
+      background: linear-gradient(180deg, #b77b48, #75452e);
+      border-color: var(--steam-gold);
+      color: #fff0b5;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 3px 0 rgba(8, 13, 15, 0.4);
+    }
+
+    .rpg-sidebar .neon-input {
+      background: rgba(4, 15, 18, 0.6);
+      border-color: rgba(197, 150, 70, 0.42);
+      border-radius: 6px;
+      color: #f8e7b1;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .rpg-sidebar .neon-input:focus {
+      border-color: var(--steam-teal);
+      box-shadow: 0 0 0 3px rgba(115, 194, 176, 0.16), inset 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .neon-button {
+      background: linear-gradient(180deg, #e0b95c, #9a5d32);
+      border-color: #ffe09a;
+      border-radius: 6px;
+      color: #182426;
+      box-shadow: 0 5px 0 #583522, 0 10px 18px rgba(0,0,0,0.22);
+    }
+
+    .neon-button:hover:not(:disabled) { box-shadow: 0 7px 0 #583522, 0 12px 20px rgba(0,0,0,0.3); }
+
+    .log-panel { background: linear-gradient(145deg, rgba(42, 68, 69, 0.98), rgba(20, 39, 43, 0.98)); }
+
+    .log-panel .panel-title h2 { color: var(--steam-gold); }
+    .log-panel .panel-title { border-bottom-color: rgba(115, 194, 176, 0.3); }
+
+    .refresh-button {
+      background: rgba(8, 21, 24, 0.6);
+      border-color: var(--steam-teal);
+      border-radius: 6px;
+      color: #a8e3d1;
+      box-shadow: 0 3px 0 rgba(4, 12, 14, 0.5);
+    }
+
+    .game-table thead th { color: var(--steam-gold); }
+    .game-table tbody tr { border-bottom-color: rgba(115, 194, 176, 0.2); }
+    .game-table tbody tr:hover { background: rgba(115, 194, 176, 0.08); }
+    .neon-spinner { background: conic-gradient(from 0deg, transparent 0%, var(--steam-gold) 50%, var(--steam-teal) 100%); }
   </style>
 </head>
 <body class="p-4 md:p-8 relative overflow-x-hidden">
@@ -435,6 +586,7 @@
   <header class="max-w-7xl mx-auto mb-8">
     <div class="hud-bar glass-card">
       <div class="game-logo">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div class="game-logo-mark">🎮</div>
         <span>Menu Quest</span>
@@ -452,15 +604,28 @@
         <div class="hud-pill">Guild <strong>mambers0908</strong></div>
         <div class="hud-pill">Rank <strong>QUALITY</strong></div>
 >>>>>>> second
+=======
+        <div class="game-logo-mark">⚙️</div>
+        <span>Steamworks QC</span>
+      </div>
+
+      <div class="hud-stats">
+        <div class="hud-pill">Factory <strong>mambers0908</strong></div>
+        <div class="hud-pill">Gauge <strong>QUALITY</strong></div>
+>>>>>>> second
         <div class="hud-pill">Status <strong>READY</strong></div>
       </div>
 
       <div class="mission-badge">
         <span>Quest</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <strong>MAIN MENU</strong>
 =======
         <strong>QUEST BOARD</strong>
+>>>>>>> second
+=======
+        <strong>PRESSURE READY</strong>
 >>>>>>> second
       </div>
     </div>
@@ -470,17 +635,21 @@
     <section class="lg:col-span-4 glass-card rpg-sidebar rounded-2xl p-6 md:p-8 animate-float-card transition-all">
       <div class="panel-title">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <h2>Quest Menu</h2>
 =======
         <h2>Quest Board</h2>
+>>>>>>> second
+=======
+        <h2>Control Deck</h2>
 >>>>>>> second
         <span class="panel-tag">Live</span>
       </div>
 
       <nav class="quest-nav" aria-label="Quest navigation">
-        <div class="quest-nav-item active"><span class="quest-nav-icon">📝</span><span>New Quest</span></div>
-        <div class="quest-nav-item"><span class="quest-nav-icon">📜</span><span>Log Book</span></div>
-        <div class="quest-nav-item"><span class="quest-nav-icon">🏆</span><span>Rankings</span></div>
+        <div class="quest-nav-item active"><span class="quest-nav-icon">⚙️</span><span>Input</span></div>
+        <div class="quest-nav-item"><span class="quest-nav-icon">📜</span><span>Log</span></div>
+        <div class="quest-nav-item"><span class="quest-nav-icon">📈</span><span>Gauge</span></div>
       </nav>
 
       <form id="defectForm" class="custom-form space-y-4">
@@ -534,7 +703,7 @@
 
     <section class="lg:col-span-8 glass-card log-panel rounded-2xl p-6 md:p-8 animate-float-card-delayed transition-all min-h-[480px]">
       <div class="panel-title">
-        <h2>Guild Log</h2>
+        <h2>Pressure Log</h2>
         <button onclick="fetchMembers0908()" class="refresh-button text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1">
           🔄 Refresh
         </button>
