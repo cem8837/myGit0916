@@ -8,33 +8,33 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --bg-1: #f8fbff;
-      --bg-2: #edf8ff;
-      --bg-3: #dff7f2;
-      --bg-4: #d0f0e9;
-      --bg-5: #b8e9dd;
-      --panel: rgba(255, 255, 255, 0.88);
-      --panel-strong: rgba(255, 255, 255, 0.96);
-      --mint: #8fe3ca;
-      --mint-dark: #60c1ae;
-      --sky: #9ed9ff;
-      --blue: #5ca8ff;
-      --purple: #a8a3ff;
-      --pink: #ffb4d6;
-      --gold: #ffd86b;
-      --gold-2: #ffb54d;
+      --bg-1: #f7f4ff;
+      --bg-2: #f0e9ff;
+      --bg-3: #e0d8ff;
+      --bg-4: #d0ceff;
+      --bg-5: #b9b7ff;
+      --panel: rgba(255,255,255,0.9);
+      --panel-strong: rgba(255,255,255,0.96);
+      --purple-1: #8c7dff;
+      --purple-2: #6f5ef7;
+      --pink: #ff9ad2;
+      --pink-2: #ff7fb7;
+      --blue: #83d9ff;
+      --gold: #ffd866;
+      --gold-2: #ffb648;
+      --mint: #8de6c4;
       --red: #ff7a7a;
-      --ink: #304b5a;
-      --text: #22415d;
-      --muted: #5f7b8a;
+      --ink: #2f2a58;
+      --text: #2d295c;
+      --muted: #5e5b84;
     }
 
     * { box-sizing: border-box; }
 
     body {
       background:
-        radial-gradient(circle at top left, rgba(255, 216, 107, 0.34), transparent 18%),
-        radial-gradient(circle at bottom right, rgba(168, 163, 255, 0.22), transparent 24%),
+        radial-gradient(circle at top left, rgba(255, 216, 102, 0.34), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(255, 154, 210, 0.26), transparent 24%),
         linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 22%, var(--bg-3) 45%, var(--bg-4) 70%, var(--bg-5) 100%);
       min-height: 100vh;
       color: var(--text);
@@ -48,8 +48,8 @@
       position: fixed;
       inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
       background-size: 26px 26px;
       opacity: 0.32;
       pointer-events: none;
@@ -68,17 +68,17 @@
     }
 
     .animate-float-card {
-      animation: float 6s ease-in-out infinite;
+      animation: float 5.6s ease-in-out infinite;
     }
 
     .animate-float-card-delayed {
-      animation: float-delayed 7s ease-in-out infinite 1s;
+      animation: float-delayed 6.5s ease-in-out infinite 0.9s;
     }
 
     .glass-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(236, 251, 248, 0.82));
-      border: 3px solid rgba(255,255,255,0.9);
-      box-shadow: 0 0 0 4px rgba(255,255,255,0.36), 0 18px 30px rgba(49, 117, 119, 0.14), inset 0 6px 0 rgba(255,255,255,0.58);
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(242, 237, 255, 0.82));
+      border: 3px solid rgba(255,255,255,0.92);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.34), 0 18px 30px rgba(57, 48, 99, 0.12), inset 0 6px 0 rgba(255,255,255,0.62);
       position: relative;
       overflow: hidden;
       border-radius: 28px;
@@ -88,7 +88,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(159, 223, 209, 0.18), transparent 100%);
+      background: linear-gradient(120deg, transparent 0%, rgba(140, 125, 255, 0.12), transparent 100%);
       transform: translateX(-100%);
       pointer-events: none;
     }
@@ -102,9 +102,9 @@
       gap: 1rem;
       margin: 0 auto 1.5rem;
       max-width: 1280px;
-      background: linear-gradient(180deg, #fef7cf, #e0f8f3);
+      background: linear-gradient(180deg, #fff6c9, #ede7ff);
       border: 3px solid rgba(255,255,255,0.9);
-      box-shadow: 0 8px 0 rgba(65, 135, 120, 0.16), 0 18px 28px rgba(48, 76, 94, 0.12);
+      box-shadow: 0 8px 0 rgba(92, 78, 178, 0.14), 0 18px 28px rgba(48, 42, 88, 0.12);
     }
 
     .game-logo {
@@ -124,9 +124,9 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, #ffe6a0, #ffc66a);
+      background: linear-gradient(135deg, #ffe490, #ffab6a);
       border: 3px solid rgba(255,255,255,0.8);
-      box-shadow: 0 5px 0 rgba(122, 95, 59, 0.16);
+      box-shadow: 0 5px 0 rgba(127, 98, 56, 0.15);
       font-size: 1.2rem;
     }
 
@@ -144,14 +144,14 @@
       font-size: 0.66rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      border: 2px solid rgba(66, 124, 127, 0.12);
-      background: rgba(255,255,255,0.5);
+      border: 2px solid rgba(92, 78, 178, 0.12);
+      background: rgba(255,255,255,0.52);
       color: var(--muted);
       box-shadow: inset 0 2px 0 rgba(255,255,255,0.5);
     }
 
     .hud-pill strong {
-      color: var(--mint-dark);
+      color: var(--purple-2);
       margin-left: 0.3rem;
       font-weight: 900;
     }
@@ -162,21 +162,21 @@
       gap: 0.55rem;
       padding: 0.55rem 0.85rem;
       border-radius: 16px;
-      background: linear-gradient(180deg, #fff2bf, #ffe0a3);
-      border: 2px solid rgba(255, 179, 71, 0.75);
-      box-shadow: 0 4px 0 rgba(151, 117, 74, 0.15);
+      background: linear-gradient(180deg, #fff1d6, #ffe4a7);
+      border: 2px solid rgba(255, 182, 72, 0.7);
+      box-shadow: 0 4px 0 rgba(139, 103, 55, 0.12);
     }
 
     .mission-badge span {
       font-size: 0.62rem;
-      color: #6d4d32;
+      color: #6c4b2b;
       letter-spacing: 0.17em;
       text-transform: uppercase;
       font-weight: 800;
     }
 
     .mission-badge strong {
-      color: #2a5664;
+      color: #473d86;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       font-weight: 900;
@@ -189,7 +189,7 @@
       gap: 0.75rem;
       padding-bottom: 0.8rem;
       margin-bottom: 1rem;
-      border-bottom: 2px dashed rgba(56, 125, 116, 0.2);
+      border-bottom: 2px dashed rgba(110, 94, 247, 0.18);
       position: relative;
       z-index: 1;
     }
@@ -198,7 +198,7 @@
       font-size: 1.08rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #275968;
+      color: #3d3d7b;
       font-weight: 900;
     }
 
@@ -211,9 +211,9 @@
       font-size: 0.64rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: linear-gradient(180deg, #ffe0ef, #ffcfe6);
-      border: 2px solid rgba(255, 138, 191, 0.8);
-      color: #7a4b6d;
+      background: linear-gradient(180deg, #ffe0ef, #ffd0ec);
+      border: 2px solid rgba(255, 125, 181, 0.8);
+      color: #7b3260;
       font-weight: 900;
     }
 
@@ -232,7 +232,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #3e6d7b;
+      color: #4b4b8b;
       font-weight: 800;
     }
 
@@ -240,38 +240,38 @@
       transition: all 0.25s ease;
       background: rgba(255,255,255,0.62);
       color: var(--ink);
-      border: 2px solid rgba(72, 129, 136, 0.2);
+      border: 2px solid rgba(92, 90, 179, 0.18);
       box-shadow: inset 0 2px 0 rgba(255,255,255,0.4);
     }
 
     .neon-input:focus {
       outline: none;
-      border-color: rgba(96, 193, 174, 0.9);
-      box-shadow: 0 0 0 3px rgba(96, 193, 174, 0.18), inset 0 2px 0 rgba(255,255,255,0.4);
+      border-color: rgba(111, 94, 247, 0.9);
+      box-shadow: 0 0 0 3px rgba(111, 94, 247, 0.16), inset 0 2px 0 rgba(255,255,255,0.4);
       transform: translateY(-1px);
     }
 
     .neon-button {
       transition: all 0.2s ease;
       border: 3px solid rgba(255,255,255,0.85);
-      background: linear-gradient(180deg, #ffe99c, #ffc76d);
-      color: #274c64;
+      background: linear-gradient(180deg, #ffd96b, #ffb34d);
+      color: #3f2d6b;
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      box-shadow: 0 6px 0 rgba(126, 101, 60, 0.18), 0 12px 18px rgba(96, 193, 174, 0.12);
+      box-shadow: 0 6px 0 rgba(126, 90, 55, 0.18), 0 12px 18px rgba(111, 94, 247, 0.12);
     }
 
     .neon-button:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 8px 0 rgba(126, 101, 60, 0.18), 0 14px 20px rgba(96, 193, 174, 0.16);
+      box-shadow: 0 8px 0 rgba(126, 90, 55, 0.18), 0 14px 20px rgba(111, 94, 247, 0.16);
     }
 
     .refresh-button {
-      border: 2px solid rgba(84, 146, 159, 0.2);
-      background: linear-gradient(180deg, #ffffff, #edfefc);
-      color: #315a63;
-      box-shadow: 0 4px 0 rgba(98, 142, 155, 0.12);
+      border: 2px solid rgba(92, 90, 179, 0.18);
+      background: linear-gradient(180deg, #ffffff, #f1eeff);
+      color: #433c7d;
+      box-shadow: 0 4px 0 rgba(92, 90, 179, 0.12);
       border-radius: 14px;
       font-weight: 800;
     }
@@ -284,7 +284,7 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, transparent 0%, #ffd86b 50%, #ff9ac1 100%);
+      background: conic-gradient(from 0deg, transparent 0%, #ffd96b 50%, #ff7fb7 100%);
       mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
       -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
       animation: spin 1s linear infinite;
@@ -295,7 +295,7 @@
     }
 
     .game-table thead th {
-      color: #356b7e;
+      color: #4f4c8a;
       font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -303,11 +303,11 @@
     }
 
     .game-table tbody tr {
-      border-bottom: 1px dashed rgba(68, 120, 138, 0.18);
+      border-bottom: 1px dashed rgba(92, 90, 179, 0.15);
     }
 
     .game-table tbody tr:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.18);
     }
   </style>
 </head>
@@ -316,19 +316,19 @@
   <header class="max-w-7xl mx-auto mb-8">
     <div class="hud-bar glass-card">
       <div class="game-logo">
-        <div class="game-logo-mark">🌟</div>
-        <span>Fairy Quest</span>
+        <div class="game-logo-mark">🎮</div>
+        <span>Menu Quest</span>
       </div>
 
       <div class="hud-stats">
-        <div class="hud-pill">Realm <strong>mambers0908</strong></div>
-        <div class="hud-pill">Magic <strong>QUALITY</strong></div>
+        <div class="hud-pill">World <strong>mambers0908</strong></div>
+        <div class="hud-pill">Mode <strong>QUEST</strong></div>
         <div class="hud-pill">Status <strong>READY</strong></div>
       </div>
 
       <div class="mission-badge">
         <span>Quest</span>
-        <strong>MAGIC ALERT</strong>
+        <strong>MAIN MENU</strong>
       </div>
     </div>
   </header>
@@ -336,7 +336,7 @@
   <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     <section class="lg:col-span-4 glass-card rounded-2xl p-6 md:p-8 animate-float-card transition-all">
       <div class="panel-title">
-        <h2>Fairy Input</h2>
+        <h2>Quest Menu</h2>
         <span class="panel-tag">Live</span>
       </div>
 
