@@ -8,29 +8,32 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --bg-1: #070b17;
-      --bg-2: #0d1324;
-      --bg-3: #171f32;
-      --panel: rgba(15, 23, 42, 0.76);
-      --panel-strong: rgba(12, 18, 31, 0.92);
-      --line: rgba(125, 211, 252, 0.18);
-      --cyan: #67e8f9;
-      --blue: #60a5fa;
-      --pink: #f472b6;
-      --amber: #fbbf24;
-      --green: #34d399;
-      --red: #f87171;
-      --text: #edf6ff;
-      --muted: #a5b4cf;
+      --bg-1: #120d0a;
+      --bg-2: #201813;
+      --bg-3: #2c1d18;
+      --bg-4: #3b261f;
+      --panel: rgba(42, 28, 22, 0.82);
+      --panel-strong: rgba(26, 18, 14, 0.92);
+      --gold: #f5c76a;
+      --gold-2: #d6a34b;
+      --red: #d96b4c;
+      --brown: #8a5a3b;
+      --wood: #65442f;
+      --ink: #1a120d;
+      --paper: #f8eed9;
+      --mist: #d7c8a8;
+      --green: #73d19c;
+      --text: #f7f0df;
+      --muted: #d7c8a8;
     }
 
     * { box-sizing: border-box; }
 
     body {
       background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.12), transparent 26%),
-        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 35%, var(--bg-3) 100%);
+        radial-gradient(circle at top left, rgba(245, 199, 106, 0.18), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(217, 107, 76, 0.12), transparent 24%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 32%, var(--bg-3) 62%, var(--bg-4) 100%);
       min-height: 100vh;
       color: var(--text);
       font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
@@ -42,11 +45,11 @@
       content: "";
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(103, 232, 249, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(103, 232, 249, 0.04) 1px, transparent 1px);
-      background-size: 24px 24px;
-      mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+      background:
+        linear-gradient(rgba(245, 199, 106, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 199, 106, 0.03) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(circle at center, black 58%, transparent 100%);
       pointer-events: none;
     }
 
@@ -71,11 +74,11 @@
     }
 
     .glass-card {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.64));
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.08), 0 22px 45px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+      background: linear-gradient(180deg, rgba(58, 38, 28, 0.9), rgba(28, 20, 17, 0.86));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(245, 199, 106, 0.22);
+      box-shadow: 0 0 0 1px rgba(214, 163, 75, 0.08), 0 22px 38px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
       position: relative;
       overflow: hidden;
     }
@@ -84,42 +87,46 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(103, 232, 249, 0.06), transparent 100%);
+      background: linear-gradient(120deg, transparent 0%, rgba(245, 199, 106, 0.08), transparent 100%);
       transform: translateX(-100%);
       pointer-events: none;
     }
 
     .hud-bar {
-      border-radius: 22px;
-      padding: 1rem 1.25rem;
+      border-radius: 24px;
+      padding: 1rem 1.3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
       margin: 0 auto 1.5rem;
       max-width: 1280px;
+      background: linear-gradient(180deg, rgba(64, 44, 29, 0.96), rgba(28, 18, 14, 0.92));
+      border: 1px solid rgba(245, 199, 106, 0.22);
+      box-shadow: inset 0 0 18px rgba(245, 199, 106, 0.08), 0 16px 28px rgba(18, 10, 7, 0.46);
     }
 
     .game-logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #e0f2fe;
+      color: var(--paper);
       font-size: 0.8rem;
     }
 
     .game-logo-mark {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(103, 232, 249, 0.2), rgba(244, 114, 182, 0.2));
-      border: 1px solid rgba(103, 232, 249, 0.45);
-      box-shadow: 0 0 18px rgba(103, 232, 249, 0.25);
+      background: linear-gradient(135deg, rgba(245, 199, 106, 0.18), rgba(217, 107, 76, 0.16));
+      border: 1px solid rgba(245, 199, 106, 0.42);
+      box-shadow: 0 0 18px rgba(245, 199, 106, 0.18);
+      font-size: 1.25rem;
     }
 
     .hud-stats {
@@ -131,18 +138,19 @@
     }
 
     .hud-pill {
-      padding: 0.45rem 0.75rem;
+      padding: 0.45rem 0.8rem;
       border-radius: 999px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(245, 199, 106, 0.2);
+      background: rgba(18, 12, 9, 0.6);
       color: var(--muted);
+      box-shadow: inset 0 0 12px rgba(245, 199, 106, 0.04);
     }
 
     .hud-pill strong {
-      color: var(--cyan);
+      color: var(--gold);
       margin-left: 0.3rem;
       font-weight: 700;
     }
@@ -153,20 +161,20 @@
       gap: 0.55rem;
       padding: 0.55rem 0.85rem;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(251, 191, 36, 0.34);
-      box-shadow: 0 0 14px rgba(251, 191, 36, 0.18);
+      background: rgba(25, 16, 12, 0.9);
+      border: 1px solid rgba(245, 199, 106, 0.3);
+      box-shadow: 0 0 16px rgba(245, 199, 106, 0.12);
     }
 
     .mission-badge span {
       font-size: 0.65rem;
-      color: var(--amber);
+      color: var(--gold);
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .mission-badge strong {
-      color: #fff7d6;
+      color: #fff3d1;
       font-size: 0.82rem;
       letter-spacing: 0.08em;
     }
@@ -178,31 +186,31 @@
       gap: 0.75rem;
       padding-bottom: 0.8rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      border-bottom: 1px solid rgba(245, 199, 106, 0.18);
       position: relative;
       z-index: 1;
     }
 
     .panel-title h2 {
       font-size: 1.1rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #fef3c7;
-      font-weight: 700;
+      color: #f8e9bf;
+      font-weight: 800;
     }
 
     .panel-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
       font-size: 0.64rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(52, 211, 153, 0.3);
-      color: #bbf7d0;
+      background: rgba(217, 107, 76, 0.12);
+      border: 1px solid rgba(217, 107, 76, 0.34);
+      color: #ffd8cc;
     }
 
     .custom-form {
@@ -220,56 +228,56 @@
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(191, 219, 254, 0.82);
+      color: rgba(248, 222, 170, 0.8);
     }
 
     .neon-input {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: rgba(15, 23, 42, 0.85);
-      color: #eff6ff;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.06);
+      background: rgba(22, 15, 12, 0.88);
+      color: #fff3d1;
+      border: 1px solid rgba(245, 199, 106, 0.18);
+      box-shadow: inset 0 0 0 1px rgba(245, 199, 106, 0.06);
     }
 
     .neon-input:focus {
       outline: none;
-      border-color: rgba(251, 191, 36, 0.7);
-      box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 16px rgba(251, 191, 36, 0.18), inset 0 0 8px rgba(251, 191, 36, 0.08);
+      border-color: rgba(245, 199, 106, 0.75);
+      box-shadow: 0 0 0 1px rgba(245, 199, 106, 0.28), 0 0 18px rgba(245, 199, 106, 0.16), inset 0 0 10px rgba(245, 199, 106, 0.08);
       transform: translateY(-1px);
     }
 
     .neon-button {
       transition: all 0.25s ease;
-      border: 1px solid rgba(251, 191, 36, 0.45);
-      background: linear-gradient(135deg, rgba(251, 191, 36, 0.98), rgba(244, 114, 182, 0.95));
-      color: #1a1215;
-      font-weight: 800;
+      border: 1px solid rgba(245, 199, 106, 0.5);
+      background: linear-gradient(135deg, rgba(245, 199, 106, 0.98), rgba(214, 163, 75, 0.96));
+      color: #2a1b12;
+      font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      box-shadow: 0 0 18px rgba(251, 191, 36, 0.2), inset 0 1px 0 rgba(255,255,255,0.28);
+      box-shadow: 0 0 18px rgba(245, 199, 106, 0.2), inset 0 1px 0 rgba(255,255,255,0.24);
     }
 
     .neon-button:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 0 24px rgba(244, 114, 182, 0.32), 0 0 18px rgba(251, 191, 36, 0.22);
+      box-shadow: 0 0 20px rgba(245, 199, 106, 0.28), 0 0 14px rgba(217, 107, 76, 0.18);
     }
 
     .refresh-button {
-      border: 1px solid rgba(103, 232, 249, 0.28);
-      background: rgba(15, 23, 42, 0.82);
-      color: #dbeafe;
-      box-shadow: inset 0 0 12px rgba(103, 232, 249, 0.08);
+      border: 1px solid rgba(245, 199, 106, 0.2);
+      background: rgba(26, 18, 14, 0.75);
+      color: #f7e9c7;
+      box-shadow: inset 0 0 12px rgba(245, 199, 106, 0.06);
     }
 
     .refresh-button:hover {
-      background: rgba(30, 41, 59, 0.92);
+      background: rgba(38, 28, 23, 0.9);
     }
 
     .neon-spinner {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, transparent 0%, #fbbf24 50%, #f472b6 100%);
+      background: conic-gradient(from 0deg, transparent 0%, #f5c76a 50%, #d96b4c 100%);
       mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
       -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
       animation: spin 1s linear infinite;
@@ -280,18 +288,18 @@
     }
 
     .game-table thead th {
-      color: #cbd5e1;
+      color: #f5d9a1;
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     .game-table tbody tr {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      border-bottom: 1px solid rgba(245, 199, 106, 0.1);
     }
 
     .game-table tbody tr:hover {
-      background: rgba(103, 232, 249, 0.03);
+      background: rgba(245, 199, 106, 0.04);
     }
   </style>
 </head>
@@ -300,19 +308,19 @@
   <header class="max-w-7xl mx-auto mb-8">
     <div class="hud-bar glass-card">
       <div class="game-logo">
-        <div class="game-logo-mark">⚙️</div>
-        <span>Defect Ops</span>
+        <div class="game-logo-mark">⚔️</div>
+        <span>Hero Log</span>
       </div>
 
       <div class="hud-stats">
-        <div class="hud-pill">Zone <strong>SECTOR-09</strong></div>
-        <div class="hud-pill">Target <strong>mambers0908</strong></div>
-        <div class="hud-pill">Status <strong>ONLINE</strong></div>
+        <div class="hud-pill">World <strong>mambers0908</strong></div>
+        <div class="hud-pill">Quest <strong>QUALITY</strong></div>
+        <div class="hud-pill">Status <strong>READY</strong></div>
       </div>
 
       <div class="mission-badge">
-        <span>Mission</span>
-        <strong>QUALITY ALERT</strong>
+        <span>Quest</span>
+        <strong>DEFECT RAID</strong>
       </div>
     </div>
   </header>
@@ -320,7 +328,7 @@
   <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     <section class="lg:col-span-4 glass-card rounded-2xl p-6 md:p-8 animate-float-card transition-all">
       <div class="panel-title">
-        <h2>Input Console</h2>
+        <h2>Hero Input</h2>
         <span class="panel-tag">Live</span>
       </div>
 
@@ -406,11 +414,11 @@
     </section>
   </main>
 
-  <div id="toast" class="fixed bottom-6 right-6 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 glass-card px-6 py-4 rounded-xl border border-amber-400/30 flex items-center gap-3 shadow-2xl">
+  <div id="toast" class="fixed bottom-6 right-6 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 glass-card px-6 py-4 rounded-xl border border-orange-400/30 flex items-center gap-3 shadow-2xl">
     <span class="text-2xl" id="toastIcon">✨</span>
     <div>
-      <h4 id="toastTitle" class="font-semibold text-amber-200 text-sm">Notification</h4>
-      <p id="toastMessage" class="text-amber-100/70 text-xs mt-0.5">Message</p>
+      <h4 id="toastTitle" class="font-semibold text-orange-200 text-sm">Notification</h4>
+      <p id="toastMessage" class="text-slate-200/80 text-xs mt-0.5">Message</p>
     </div>
   </div>
 
