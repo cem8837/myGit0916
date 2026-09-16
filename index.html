@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工程不良數據點檢系統 (mambers0908)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 莫蘭迪暖色舒適背景漸層 */
+    body {
+      background: linear-gradient(135deg, #2c221e 0%, #3d2b25 35%, #4a342c 70%, #221815 100%);
+      min-height: 100vh;
+      color: #f3e9e3;
+      font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    }
+
+    /* 無重力懸浮感 @keyframes float */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(0.3deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes float-delayed {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(-0.4deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .animate-float-card {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-card-delayed {
+      animation: float-delayed 7s ease-in-out infinite 1s;
+    }
+
+    /* 毛玻璃效果 (Glassmorphism) */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    /* Focus 螢光淡黃 Neon Glow 與 Hover 微向上位移漂浮感 */
+    .neon-input {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .neon-input:focus {
+      outline: none;
+      border-color: rgba(251, 191, 36, 0.6);
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.35), inset 0 0 5px rgba(251, 191, 36, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* 按鈕 Hover 螢光粉紫 Neon Glow 與位移 */
+    .neon-button {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .neon-button:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(244, 114, 182, 0.5), 0 0 10px rgba(251, 191, 36, 0.4);
+    }
+
+    /* 霓虹流光旋轉 Loading 動畫 */
+    .neon-spinner {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, transparent 0%, #fbbf24 50%, #f472b6 100%);
+      mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-10 relative overflow-x-hidden">
+
+  <!-- 頂部標題區 -->
+  <header class="max-w-7xl mx-auto mb-10 text-center">
+    <h1 class="text-3xl md:text-4xl font-light tracking-widest text-amber-100 flex items-center justify-center gap-3">
+      <span class="text-amber-400">⚙️</span> 工程不良追蹤調查與改善系統
+    </h1>
+    <p class="text-amber-200/60 mt-2 text-sm tracking-wider">Target Sheet: mambers0908</p>
+  </header>
+
+  <!-- 主要內容網格 -->
+  <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- 左側：資料寫入表單卡片 -->
+    <section class="lg:col-span-4 glass-card rounded-2xl p-6 md:p-8 animate-float-card transition-all">
+      <h2 class="text-xl font-medium text-amber-200 mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
+        <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+        填寫不良點檢資料
+      </h2>
+
+      <form id="defectForm" class="space-y-4">
+        <div>
+          <label class="block text-sm text-amber-200/80 mb-1">MO 單號</label>
+          <input type="text" id="mo" required placeholder="例如：70185" 
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 placeholder-amber-100/30 neon-input">
+        </div>
+
+        <div>
+          <label class="block text-sm text-amber-200/80 mb-1">品番 (Part No.)</label>
+          <input type="text" id="partNo" required placeholder="例如：Y121W18801" 
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 placeholder-amber-100/30 neon-input">
+        </div>
+
+        <div>
+          <label class="block text-sm text-amber-200/80 mb-1">仕上 (Finish)</label>
+          <input type="text" id="finish" required placeholder="例如：A1S90-C" 
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 placeholder-amber-100/30 neon-input">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm text-amber-200/80 mb-1">受入數</label>
+            <input type="number" id="inputQty" required placeholder="233" 
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 placeholder-amber-100/30 neon-input">
+          </div>
+          <div>
+            <label class="block text-sm text-amber-200/80 mb-1">不良合計</label>
+            <input type="number" id="defectQty" required placeholder="81" 
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 placeholder-amber-100/30 neon-input">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm text-amber-200/80 mb-1">不良等級 (Severity)</label>
+          <select id="severity" required class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-2.5 text-amber-50 neon-input">
+            <option value="輕微">輕微 (Minor)</option>
+            <option value="進階">進階 (Moderate)</option>
+            <option value="重點">重點 (Major)</option>
+            <option value="至急">至急 (Critical)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm text-amber-200/80 mb-1">不良原因調查 / 備註</label>
+          <textarea id="remark" rows="2" placeholder="例如：來料異物附著、雜物、白點" 
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-amber-50 placeholder-amber-100/30 neon-input"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full mt-2 bg-gradient-to-r from-amber-500/80 to-pink-500/80 hover:from-amber-500 hover:to-pink-500 text-stone-950 font-semibold py-3 px-6 rounded-xl neon-button flex items-center justify-center gap-2">
+          <span id="btnText">寫入至 mambers0908</span>
+          <div id="btnSpinner" class="hidden w-5 h-5 border-2 border-stone-950 border-t-transparent rounded-full animate-spin"></div>
+        </button>
+      </form>
+    </section>
+
+    <!-- 右側：資料讀取表格卡片 (Fetch API 動態渲染) -->
+    <section class="lg:col-span-8 glass-card rounded-2xl p-6 md:p-8 animate-float-card-delayed transition-all min-h-[480px]">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+        <h2 class="text-xl font-medium text-amber-200 flex items-center gap-2">
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          mambers0908 不良調查清單
+        </h2>
+        <button onclick="fetchMembers0908()" class="text-xs bg-white/5 hover:bg-white/10 text-amber-200/80 border border-white/10 px-3 py-1.5 rounded-lg transition flex items-center gap-1">
+          🔄 重新整理
+        </button>
+      </div>
+
+      <!-- 霓虹流光旋轉 Loading 動畫 -->
+      <div id="loadingState" class="flex flex-col items-center justify-center py-20 gap-4">
+        <div class="neon-spinner"></div>
+        <p class="text-amber-200/70 text-sm tracking-widest animate-pulse">正在經由 Fetch API 讀取 mambers0908 工作表...</p>
+      </div>
+
+      <!-- Fetch API 數據渲染表格 -->
+      <div id="tableContainer" class="hidden overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10 text-amber-200/60 text-xs tracking-wider uppercase">
+              <th class="py-3 px-3">MO 單號</th>
+              <th class="py-3 px-3">品番</th>
+              <th class="py-3 px-3">仕上</th>
+              <th class="py-3 px-3 text-right">受入數</th>
+              <th class="py-3 px-3 text-right">不良合計</th>
+              <th class="py-3 px-3">原因/備註</th>
+              <th class="py-3 px-3 text-center">不良等級</th>
+            </tr>
+          </thead>
+          <tbody id="defectTableBody" class="divide-y divide-white/5 text-sm">
+            <!-- 由 fetchMembers0908() 動態插入 -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 美化提示框 (Toast) -->
+  <div id="toast" class="fixed bottom-6 right-6 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 glass-card px-6 py-4 rounded-xl border border-amber-400/30 flex items-center gap-3 shadow-2xl">
+    <span class="text-2xl" id="toastIcon">✨</span>
+    <div>
+      <h4 id="toastTitle" class="font-semibold text-amber-200 text-sm">通知</h4>
+      <p id="toastMessage" class="text-amber-100/70 text-xs mt-0.5">訊息內容</p>
+    </div>
+  </div>
+
+  <script>
+    /********************************************************************************
+     * ★★★ 【請在此處更換您的串接網址】 ★★★
+     * 請將下方 API_URL 引號內的占位符替換為您的 Google Apps Script 部署 URL。
+     * 範例："https://script.google.com/macros/s/AKfycbx.../exec"
+     ********************************************************************************/
+    const API_URL = "https://script.google.com/macros/s/AKfycbzPV6UyR2Fjbdpu85l4jc0QKH3aOj_vWKjMKLmWtZVqinfkSYpsSMActpjG2CDQQX_zhQ/exec"; 
+    
+    // 指定讀取與寫入的工作表名稱
+    const TARGET_SHEET = "mambers0908";
+
+    // 頁面初次載入時自動執行 GET 請求
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchMembers0908();
+    });
+
+    // 2. 資料讀取 (GET 請求)
+    async function fetchMembers0908() {
+      showLoading(true);
+      try {
+        const url = `${API_URL}?action=read&sheet=${encodeURIComponent(TARGET_SHEET)}`;
+        const response = await fetch(url);
+        const result = await response.json();
+
+        if (result.status === "success") {
+          renderTable(result.data);
+        } else {
+          showToast("讀取失敗", result.message || "遠端 API 回傳錯誤", "⚠️");
+          renderEmptyTable("錯誤訊息：" + (result.message || "找不到指定工作表"));
+        }
+      } catch (error) {
+        console.error("Fetch API Error:", error);
+        showToast("提示", "請確認已將 API_URL 替換為您的 Google Apps Script 網址", "ℹ️");
+        renderEmptyTable("連線失敗：請確認 API_URL 是否設定正確並發布為「所有人」");
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    // 動態渲染資料至表格 (含霓虹懸浮 Badge 標籤)
+    function renderTable(dataList) {
+      const tbody = document.getElementById("defectTableBody");
+      tbody.innerHTML = "";
+
+      if (!dataList || dataList.length === 0) {
+        renderEmptyTable(`目前 ${TARGET_SHEET} 工作表中暫無不良紀錄數據`);
+        return;
+      }
+
+      dataList.forEach(item => {
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-white/5 transition";
+
+        const badgeStyle = getSeverityBadgeStyle(item.severity);
+
+        tr.innerHTML = `
+          <td class="py-3 px-3 font-mono text-xs text-amber-300/80">${escapeHtml(item.mo)}</td>
+          <td class="py-3 px-3 text-amber-100 text-xs font-mono">${escapeHtml(item.partNo)}</td>
+          <td class="py-3 px-3 text-amber-200/70 text-xs font-mono">${escapeHtml(item.finish)}</td>
+          <td class="py-3 px-3 text-right font-mono text-amber-200/70">${item.inputQty ?? 0}</td>
+          <td class="py-3 px-3 text-right font-mono text-pink-300 font-semibold">${item.defectQty ?? 0}</td>
+          <td class="py-3 px-3 text-amber-200/70 text-xs max-w-[180px] truncate" title="${escapeHtml(item.remark)}">${escapeHtml(item.remark)}</td>
+          <td class="py-3 px-3 text-center">
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-medium border ${badgeStyle}">
+              ${escapeHtml(item.severity || '輕微')}
+            </span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // 不良等級與相對應的霓虹懸浮 Badge 樣式
+    function getSeverityBadgeStyle(severity) {
+      switch (severity) {
+        case "至急":
+          return "bg-rose-500/20 text-rose-300 border-rose-500/50 shadow-[0_0_12px_rgba(244,63,94,0.5)] animate-pulse";
+        case "重點":
+          return "bg-amber-500/20 text-amber-300 border-amber-500/50 shadow-[0_0_10px_rgba(251,191,36,0.4)]";
+        case "進階":
+          return "bg-pink-500/20 text-pink-300 border-pink-500/50 shadow-[0_0_10px_rgba(244,114,182,0.4)]";
+        case "輕微":
+        default:
+          return "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-[0_0_8px_rgba(52,211,153,0.3)]";
+      }
+    }
+
+    // 3. 資料寫入 (POST 請求)
+    document.getElementById("defectForm").addEventListener("submit", async function(e) {
+      e.preventDefault(); // 阻止表單預設行為
+
+      const payload = { 
+        sheet: TARGET_SHEET,
+        mo: document.getElementById("mo").value.trim(),
+        partNo: document.getElementById("partNo").value.trim(),
+        finish: document.getElementById("finish").value.trim(),
+        inputQty: parseInt(document.getElementById("inputQty").value) || 0,
+        defectQty: parseInt(document.getElementById("defectQty").value) || 0,
+        severity: document.getElementById("severity").value,
+        remark: document.getElementById("remark").value.trim()
+      };
+
+      setSubmitLoading(true); // 按鈕載入狀態
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          // 避開 Google Apps Script CORS 限制
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+          showToast("寫入成功", `資料已成功同步至 ${TARGET_SHEET}！`, "✨");
+          document.getElementById("defectForm").reset(); // 清空表單
+          fetchMembers0908(); // 自動刷新右側表格
+        } else {
+          showToast("寫入失敗", result.message || "處理失敗", "❌");
+        }
+      } catch (error) {
+        console.error("POST API Error:", error);
+        showToast("傳送失敗", "無法連線至遠端 API，請確認 API_URL 是否正確", "❌");
+      } finally {
+        setSubmitLoading(false);
+      }
+    });
+
+    function renderEmptyTable(message) {
+      const tbody = document.getElementById("defectTableBody");
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="7" class="text-center py-10 text-amber-200/40 font-light">${escapeHtml(message)}</td>
+        </tr>
+      `;
+    }
+
+    function showLoading(isLoading) {
+      const loader = document.getElementById("loadingState");
+      const table = document.getElementById("tableContainer");
+      if (isLoading) {
+        loader.classList.remove("hidden");
+        table.classList.add("hidden");
+      } else {
+        loader.classList.add("hidden");
+        table.classList.remove("hidden");
+      }
+    }
+
+    function setSubmitLoading(isLoading) {
+      const btn = document.getElementById("submitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnSpinner = document.getElementById("btnSpinner");
+
+      btn.disabled = isLoading;
+      if (isLoading) {
+        btnText.textContent = "寫入遠端中...";
+        btnSpinner.classList.remove("hidden");
+      } else {
+        btnText.textContent = `寫入至 ${TARGET_SHEET}`;
+        btnSpinner.classList.add("hidden");
+      }
+    }
+
+    // 美化提示框 (Toast Notification)
+    function showToast(title, message, icon = "✨") {
+      const toast = document.getElementById("toast");
+      document.getElementById("toastIcon").textContent = icon;
+      document.getElementById("toastTitle").textContent = title;
+      document.getElementById("toastMessage").textContent = message;
+
+      toast.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+      }, 3500);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>
