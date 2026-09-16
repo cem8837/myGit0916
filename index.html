@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
+<<<<<<< HEAD
       --bg-1: #f7f4ff;
       --bg-2: #f0e9ff;
       --bg-3: #e0d8ff;
@@ -27,14 +28,40 @@
       --ink: #2f2a58;
       --text: #2d295c;
       --muted: #5e5b84;
+=======
+      --bg-1: #fff8e8;
+      --bg-2: #f8e9c7;
+      --bg-3: #e8d6ae;
+      --bg-4: #c6b07e;
+      --bg-5: #8d7655;
+      --panel: rgba(255, 255, 255, 0.88);
+      --panel-strong: rgba(255, 255, 255, 0.96);
+      --mint: #9ed6b1;
+      --mint-dark: #4f8e69;
+      --sky: #9fcbe0;
+      --blue: #547fa3;
+      --purple: #9b83c7;
+      --pink: #d58a8e;
+      --gold: #f4c95d;
+      --gold-2: #c88c32;
+      --red: #b94e4e;
+      --ink: #3d2c20;
+      --text: #4b3829;
+      --muted: #79634c;
+>>>>>>> second
     }
 
     * { box-sizing: border-box; }
 
     body {
       background:
+<<<<<<< HEAD
         radial-gradient(circle at top left, rgba(255, 216, 102, 0.34), transparent 18%),
         radial-gradient(circle at bottom right, rgba(255, 154, 210, 0.26), transparent 24%),
+=======
+        radial-gradient(circle at top left, rgba(255, 224, 143, 0.48), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(112, 82, 53, 0.18), transparent 24%),
+>>>>>>> second
         linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 22%, var(--bg-3) 45%, var(--bg-4) 70%, var(--bg-5) 100%);
       min-height: 100vh;
       color: var(--text);
@@ -48,10 +75,17 @@
       position: fixed;
       inset: 0;
       background:
+<<<<<<< HEAD
         linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
       background-size: 26px 26px;
       opacity: 0.32;
+=======
+        linear-gradient(rgba(91, 65, 38, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91, 65, 38, 0.09) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.38;
+>>>>>>> second
       pointer-events: none;
     }
 
@@ -76,9 +110,15 @@
     }
 
     .glass-card {
+<<<<<<< HEAD
       background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(242, 237, 255, 0.82));
       border: 3px solid rgba(255,255,255,0.92);
       box-shadow: 0 0 0 4px rgba(255,255,255,0.34), 0 18px 30px rgba(57, 48, 99, 0.12), inset 0 6px 0 rgba(255,255,255,0.62);
+=======
+      background: linear-gradient(180deg, rgba(255,252,239,0.94), rgba(242, 226, 187, 0.9));
+      border: 3px solid rgba(255,250,224,0.95);
+      box-shadow: 0 0 0 4px rgba(92, 63, 35, 0.12), 0 18px 30px rgba(74, 49, 27, 0.2), inset 0 6px 0 rgba(255,255,255,0.58);
+>>>>>>> second
       position: relative;
       overflow: hidden;
       border-radius: 28px;
@@ -88,7 +128,11 @@
       content: "";
       position: absolute;
       inset: 0;
+<<<<<<< HEAD
       background: linear-gradient(120deg, transparent 0%, rgba(140, 125, 255, 0.12), transparent 100%);
+=======
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 220, 123, 0.2), transparent 100%);
+>>>>>>> second
       transform: translateX(-100%);
       pointer-events: none;
     }
@@ -102,9 +146,15 @@
       gap: 1rem;
       margin: 0 auto 1.5rem;
       max-width: 1280px;
+<<<<<<< HEAD
       background: linear-gradient(180deg, #fff6c9, #ede7ff);
       border: 3px solid rgba(255,255,255,0.9);
       box-shadow: 0 8px 0 rgba(92, 78, 178, 0.14), 0 18px 28px rgba(48, 42, 88, 0.12);
+=======
+      background: linear-gradient(180deg, #fff4c9, #e7d2a5);
+      border: 3px solid rgba(255,250,224,0.95);
+      box-shadow: 0 8px 0 rgba(87, 57, 27, 0.2), 0 18px 28px rgba(48, 35, 24, 0.16);
+>>>>>>> second
     }
 
     .game-logo {
@@ -124,7 +174,11 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
+<<<<<<< HEAD
       background: linear-gradient(135deg, #ffe490, #ffab6a);
+=======
+      background: linear-gradient(135deg, #ffe9a4, #d99843);
+>>>>>>> second
       border: 3px solid rgba(255,255,255,0.8);
       box-shadow: 0 5px 0 rgba(127, 98, 56, 0.15);
       font-size: 1.2rem;
@@ -309,6 +363,71 @@
     .game-table tbody tr:hover {
       background: rgba(255,255,255,0.18);
     }
+
+    .rpg-sidebar {
+      background: linear-gradient(180deg, rgba(83, 56, 34, 0.97), rgba(55, 39, 28, 0.98));
+      border: 3px solid #d9ae61;
+      box-shadow: 0 0 0 4px rgba(82, 51, 25, 0.2), 0 18px 30px rgba(51, 31, 16, 0.28);
+    }
+
+    .rpg-sidebar .panel-title { border-bottom-color: rgba(244, 201, 93, 0.3); }
+
+    .rpg-sidebar .panel-title h2,
+    .rpg-sidebar .field label { color: #ffe5a1; }
+
+    .rpg-sidebar .panel-tag {
+      background: #9d4f43;
+      border-color: #e5a25e;
+      color: #fff2c7;
+    }
+
+    .quest-nav {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .quest-nav-item {
+      display: grid;
+      justify-items: center;
+      gap: 0.2rem;
+      padding: 0.55rem 0.25rem;
+      border: 1px solid rgba(255, 224, 157, 0.28);
+      border-radius: 10px;
+      background: rgba(255, 242, 192, 0.08);
+      color: #f7d98c;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .quest-nav-item.active {
+      background: linear-gradient(180deg, #d99d46, #9b5632);
+      border-color: #ffe09a;
+      color: #fff9df;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 3px 0 rgba(38, 22, 12, 0.28);
+    }
+
+    .quest-nav-icon { font-size: 1.1rem; }
+
+    .rpg-sidebar .neon-input {
+      background: rgba(255, 248, 219, 0.12);
+      border-color: rgba(255, 219, 139, 0.3);
+      color: #fff7dc;
+    }
+
+    .rpg-sidebar .neon-input::placeholder { color: rgba(255, 233, 176, 0.56); }
+
+    .rpg-sidebar .neon-input:focus {
+      border-color: #f4c95d;
+      box-shadow: 0 0 0 3px rgba(244, 201, 93, 0.18);
+    }
+
+    .rpg-sidebar select option { color: #3d2c20; }
+
+    .log-panel { background: linear-gradient(180deg, rgba(255,252,239,0.96), rgba(235, 216, 173, 0.92)); }
   </style>
 </head>
 <body class="p-4 md:p-8 relative overflow-x-hidden">
@@ -316,6 +435,7 @@
   <header class="max-w-7xl mx-auto mb-8">
     <div class="hud-bar glass-card">
       <div class="game-logo">
+<<<<<<< HEAD
         <div class="game-logo-mark">🎮</div>
         <span>Menu Quest</span>
       </div>
@@ -323,22 +443,45 @@
       <div class="hud-stats">
         <div class="hud-pill">World <strong>mambers0908</strong></div>
         <div class="hud-pill">Mode <strong>QUEST</strong></div>
+=======
+        <div class="game-logo-mark">⚔️</div>
+        <span>Quality Guild</span>
+      </div>
+
+      <div class="hud-stats">
+        <div class="hud-pill">Guild <strong>mambers0908</strong></div>
+        <div class="hud-pill">Rank <strong>QUALITY</strong></div>
+>>>>>>> second
         <div class="hud-pill">Status <strong>READY</strong></div>
       </div>
 
       <div class="mission-badge">
         <span>Quest</span>
+<<<<<<< HEAD
         <strong>MAIN MENU</strong>
+=======
+        <strong>QUEST BOARD</strong>
+>>>>>>> second
       </div>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <section class="lg:col-span-4 glass-card rounded-2xl p-6 md:p-8 animate-float-card transition-all">
+    <section class="lg:col-span-4 glass-card rpg-sidebar rounded-2xl p-6 md:p-8 animate-float-card transition-all">
       <div class="panel-title">
+<<<<<<< HEAD
         <h2>Quest Menu</h2>
+=======
+        <h2>Quest Board</h2>
+>>>>>>> second
         <span class="panel-tag">Live</span>
       </div>
+
+      <nav class="quest-nav" aria-label="Quest navigation">
+        <div class="quest-nav-item active"><span class="quest-nav-icon">📝</span><span>New Quest</span></div>
+        <div class="quest-nav-item"><span class="quest-nav-icon">📜</span><span>Log Book</span></div>
+        <div class="quest-nav-item"><span class="quest-nav-icon">🏆</span><span>Rankings</span></div>
+      </nav>
 
       <form id="defectForm" class="custom-form space-y-4">
         <div class="field">
@@ -389,9 +532,9 @@
       </form>
     </section>
 
-    <section class="lg:col-span-8 glass-card rounded-2xl p-6 md:p-8 animate-float-card-delayed transition-all min-h-[480px]">
+    <section class="lg:col-span-8 glass-card log-panel rounded-2xl p-6 md:p-8 animate-float-card-delayed transition-all min-h-[480px]">
       <div class="panel-title">
-        <h2>Mission Log</h2>
+        <h2>Guild Log</h2>
         <button onclick="fetchMembers0908()" class="refresh-button text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1">
           🔄 Refresh
         </button>
