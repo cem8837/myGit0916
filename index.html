@@ -8,27 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-<<<<<<< HEAD
-      --bg-1: #f7f4ff;
-      --bg-2: #f0e9ff;
-      --bg-3: #e0d8ff;
-      --bg-4: #d0ceff;
-      --bg-5: #b9b7ff;
-      --panel: rgba(255,255,255,0.9);
-      --panel-strong: rgba(255,255,255,0.96);
-      --purple-1: #8c7dff;
-      --purple-2: #6f5ef7;
-      --pink: #ff9ad2;
-      --pink-2: #ff7fb7;
-      --blue: #83d9ff;
-      --gold: #ffd866;
-      --gold-2: #ffb648;
-      --mint: #8de6c4;
-      --red: #ff7a7a;
-      --ink: #2f2a58;
-      --text: #2d295c;
-      --muted: #5e5b84;
-=======
       --bg-1: #fff8e8;
       --bg-2: #f8e9c7;
       --bg-3: #e8d6ae;
@@ -48,20 +27,14 @@
       --ink: #3d2c20;
       --text: #4b3829;
       --muted: #79634c;
->>>>>>> second
     }
 
     * { box-sizing: border-box; }
 
     body {
       background:
-<<<<<<< HEAD
-        radial-gradient(circle at top left, rgba(255, 216, 102, 0.34), transparent 18%),
-        radial-gradient(circle at bottom right, rgba(255, 154, 210, 0.26), transparent 24%),
-=======
         radial-gradient(circle at top left, rgba(255, 224, 143, 0.48), transparent 18%),
         radial-gradient(circle at bottom right, rgba(112, 82, 53, 0.18), transparent 24%),
->>>>>>> second
         linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 22%, var(--bg-3) 45%, var(--bg-4) 70%, var(--bg-5) 100%);
       min-height: 100vh;
       color: var(--text);
@@ -75,17 +48,10 @@
       position: fixed;
       inset: 0;
       background:
-<<<<<<< HEAD
-        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px);
-      background-size: 26px 26px;
-      opacity: 0.32;
-=======
         linear-gradient(rgba(91, 65, 38, 0.09) 1px, transparent 1px),
         linear-gradient(90deg, rgba(91, 65, 38, 0.09) 1px, transparent 1px);
       background-size: 32px 32px;
       opacity: 0.38;
->>>>>>> second
       pointer-events: none;
     }
 
@@ -110,15 +76,9 @@
     }
 
     .glass-card {
-<<<<<<< HEAD
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(242, 237, 255, 0.82));
-      border: 3px solid rgba(255,255,255,0.92);
-      box-shadow: 0 0 0 4px rgba(255,255,255,0.34), 0 18px 30px rgba(57, 48, 99, 0.12), inset 0 6px 0 rgba(255,255,255,0.62);
-=======
       background: linear-gradient(180deg, rgba(255,252,239,0.94), rgba(242, 226, 187, 0.9));
       border: 3px solid rgba(255,250,224,0.95);
       box-shadow: 0 0 0 4px rgba(92, 63, 35, 0.12), 0 18px 30px rgba(74, 49, 27, 0.2), inset 0 6px 0 rgba(255,255,255,0.58);
->>>>>>> second
       position: relative;
       overflow: hidden;
       border-radius: 28px;
@@ -128,11 +88,7 @@
       content: "";
       position: absolute;
       inset: 0;
-<<<<<<< HEAD
-      background: linear-gradient(120deg, transparent 0%, rgba(140, 125, 255, 0.12), transparent 100%);
-=======
       background: linear-gradient(120deg, transparent 0%, rgba(255, 220, 123, 0.2), transparent 100%);
->>>>>>> second
       transform: translateX(-100%);
       pointer-events: none;
     }
@@ -146,15 +102,9 @@
       gap: 1rem;
       margin: 0 auto 1.5rem;
       max-width: 1280px;
-<<<<<<< HEAD
-      background: linear-gradient(180deg, #fff6c9, #ede7ff);
-      border: 3px solid rgba(255,255,255,0.9);
-      box-shadow: 0 8px 0 rgba(92, 78, 178, 0.14), 0 18px 28px rgba(48, 42, 88, 0.12);
-=======
       background: linear-gradient(180deg, #fff4c9, #e7d2a5);
       border: 3px solid rgba(255,250,224,0.95);
       box-shadow: 0 8px 0 rgba(87, 57, 27, 0.2), 0 18px 28px rgba(48, 35, 24, 0.16);
->>>>>>> second
     }
 
     .game-logo {
@@ -174,11 +124,7 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-<<<<<<< HEAD
-      background: linear-gradient(135deg, #ffe490, #ffab6a);
-=======
       background: linear-gradient(135deg, #ffe9a4, #d99843);
->>>>>>> second
       border: 3px solid rgba(255,255,255,0.8);
       box-shadow: 0 5px 0 rgba(127, 98, 56, 0.15);
       font-size: 1.2rem;
@@ -724,6 +670,96 @@
       .balloon { opacity: 0.5; }
       .balloon-two, .balloon-four { display: none; }
     }
+
+    .neon-button {
+      min-height: 76px;
+      margin-top: 1rem;
+      border: 5px solid #fff;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff08a 0%, #ffc64f 48%, #ed8247 100%);
+      color: #673c35;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      box-shadow:
+        0 5px 0 #fff9ce,
+        0 12px 0 #bd643e,
+        0 19px 0 #8d4a3b,
+        0 28px 25px rgba(65, 91, 147, 0.28),
+        inset 0 5px 0 rgba(255,255,255,0.65),
+        inset 0 -5px 0 rgba(179, 82, 54, 0.2);
+      transform: translateY(-3px);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    .neon-button::before {
+      content: "✦";
+      font-size: 1.35rem;
+      margin-right: 0.35rem;
+      color: #fff8c7;
+      text-shadow: 0 2px 0 #c77c3d;
+    }
+
+    .neon-button:hover:not(:disabled) {
+      filter: saturate(1.12) brightness(1.04);
+      transform: translateY(-7px) scale(1.015);
+      box-shadow:
+        0 7px 0 #fff9ce,
+        0 16px 0 #bd643e,
+        0 25px 0 #8d4a3b,
+        0 34px 30px rgba(65, 91, 147, 0.3),
+        inset 0 5px 0 rgba(255,255,255,0.65),
+        inset 0 -5px 0 rgba(179, 82, 54, 0.2);
+    }
+
+    .neon-button:active:not(:disabled) {
+      transform: translateY(13px) scale(0.985);
+      box-shadow:
+        0 3px 0 #fff9ce,
+        0 6px 0 #bd643e,
+        0 10px 0 #8d4a3b,
+        0 14px 16px rgba(65, 91, 147, 0.2),
+        inset 0 5px 0 rgba(255,255,255,0.45),
+        inset 0 -5px 0 rgba(179, 82, 54, 0.28);
+    }
+
+    .quest-nav-item {
+      min-height: 98px;
+      border-width: 4px;
+      border-radius: 22px;
+      font-size: 0.72rem;
+      box-shadow: 0 5px 0 rgba(255,255,255,0.7), 0 12px 0 #4c639e, 0 17px 12px rgba(52, 81, 139, 0.24), inset 0 4px 0 rgba(255,255,255,0.3);
+      transform: translateY(-4px);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .quest-nav-item:hover { transform: translateY(-9px) scale(1.03); }
+
+    .quest-nav-item:active {
+      transform: translateY(8px) scale(0.98);
+      box-shadow: 0 3px 0 rgba(255,255,255,0.7), 0 5px 0 #4c639e, 0 8px 8px rgba(52, 81, 139, 0.2), inset 0 4px 0 rgba(255,255,255,0.3);
+    }
+
+    .quest-nav-item.active {
+      box-shadow: 0 5px 0 #fff3f8, 0 12px 0 #a84f79, 0 17px 12px rgba(166, 72, 119, 0.24), inset 0 4px 0 rgba(255,255,255,0.42);
+    }
+
+    .refresh-button {
+      min-height: 54px;
+      border: 4px solid #fff;
+      border-radius: 17px;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.78rem;
+      box-shadow: 0 5px 0 #e3c66f, 0 10px 0 #8ca4cf, 0 15px 16px rgba(77, 116, 174, 0.18), inset 0 3px 0 rgba(255,255,255,0.7);
+      transform: translateY(-3px);
+    }
+
+    .refresh-button:hover { transform: translateY(-7px); box-shadow: 0 7px 0 #e3c66f, 0 14px 0 #8ca4cf, 0 19px 18px rgba(77, 116, 174, 0.22), inset 0 3px 0 rgba(255,255,255,0.7); }
+    .refresh-button:active { transform: translateY(7px); box-shadow: 0 2px 0 #e3c66f, 0 4px 0 #8ca4cf, 0 8px 10px rgba(77, 116, 174, 0.16), inset 0 3px 0 rgba(255,255,255,0.7); }
+
+    @media (max-width: 640px) {
+      .neon-button { min-height: 68px; font-size: 0.88rem; }
+      .quest-nav-item { min-height: 82px; }
+    }
   </style>
 </head>
 <body class="p-4 md:p-8 relative overflow-x-hidden">
@@ -738,25 +774,6 @@
   <header class="max-w-7xl mx-auto mb-8">
     <div class="hud-bar glass-card">
       <div class="game-logo">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div class="game-logo-mark">🎮</div>
-        <span>Menu Quest</span>
-      </div>
-
-      <div class="hud-stats">
-        <div class="hud-pill">World <strong>mambers0908</strong></div>
-        <div class="hud-pill">Mode <strong>QUEST</strong></div>
-=======
-        <div class="game-logo-mark">⚔️</div>
-        <span>Quality Guild</span>
-      </div>
-
-      <div class="hud-stats">
-        <div class="hud-pill">Guild <strong>mambers0908</strong></div>
-        <div class="hud-pill">Rank <strong>QUALITY</strong></div>
->>>>>>> second
-=======
         <div class="game-logo-mark">⚙️</div>
         <span>Steamworks QC</span>
       </div>
@@ -764,21 +781,12 @@
       <div class="hud-stats">
         <div class="hud-pill">Factory <strong>mambers0908</strong></div>
         <div class="hud-pill">Gauge <strong>QUALITY</strong></div>
->>>>>>> second
         <div class="hud-pill">Status <strong>READY</strong></div>
       </div>
 
       <div class="mission-badge">
         <span>Quest</span>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <strong>MAIN MENU</strong>
-=======
-        <strong>QUEST BOARD</strong>
->>>>>>> second
-=======
         <strong>PRESSURE READY</strong>
->>>>>>> second
       </div>
     </div>
   </header>
@@ -786,15 +794,7 @@
   <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     <section class="lg:col-span-4 glass-card rpg-sidebar rounded-2xl p-6 md:p-8 animate-float-card transition-all">
       <div class="panel-title">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <h2>Quest Menu</h2>
-=======
-        <h2>Quest Board</h2>
->>>>>>> second
-=======
         <h2>Control Deck</h2>
->>>>>>> second
         <span class="panel-tag">Live</span>
       </div>
 
