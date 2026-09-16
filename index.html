@@ -8,29 +8,31 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --bg-1: #070b17;
-      --bg-2: #0d1324;
-      --bg-3: #171f32;
-      --panel: rgba(15, 23, 42, 0.76);
-      --panel-strong: rgba(12, 18, 31, 0.92);
-      --line: rgba(125, 211, 252, 0.18);
-      --cyan: #67e8f9;
-      --blue: #60a5fa;
-      --pink: #f472b6;
-      --amber: #fbbf24;
-      --green: #34d399;
-      --red: #f87171;
-      --text: #edf6ff;
-      --muted: #a5b4cf;
+      --bg-1: #0b0d10;
+      --bg-2: #141a1f;
+      --bg-3: #1d262d;
+      --panel: rgba(19, 24, 29, 0.82);
+      --panel-strong: rgba(12, 15, 18, 0.94);
+      --line: rgba(148, 163, 184, 0.16);
+      --steel-1: #dfe7ef;
+      --steel-2: #a8b4bf;
+      --steel-3: #6a7785;
+      --metal: #8f99a3;
+      --amber: #f59e0b;
+      --orange: #f97316;
+      --red: #ef4444;
+      --green: #4ade80;
+      --text: #edf2f7;
+      --muted: #b6c0cc;
     }
 
     * { box-sizing: border-box; }
 
     body {
       background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.12), transparent 26%),
-        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 35%, var(--bg-3) 100%);
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.12), transparent 20%),
+        radial-gradient(circle at bottom right, rgba(148, 163, 184, 0.12), transparent 30%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 38%, var(--bg-3) 100%);
       min-height: 100vh;
       color: var(--text);
       font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
@@ -43,8 +45,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(103, 232, 249, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(103, 232, 249, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
       background-size: 24px 24px;
       mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
       pointer-events: none;
@@ -71,11 +73,11 @@
     }
 
     .glass-card {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.64));
+      background: linear-gradient(180deg, rgba(24, 29, 34, 0.9), rgba(15, 18, 22, 0.82));
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.08), 0 22px 45px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.08), 0 18px 40px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255,255,255,0.06);
       position: relative;
       overflow: hidden;
     }
@@ -84,7 +86,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(103, 232, 249, 0.06), transparent 100%);
+      background: linear-gradient(120deg, transparent 0%, rgba(249, 115, 22, 0.08), transparent 100%);
       transform: translateX(-100%);
       pointer-events: none;
     }
@@ -117,9 +119,9 @@
       border-radius: 12px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(103, 232, 249, 0.2), rgba(244, 114, 182, 0.2));
-      border: 1px solid rgba(103, 232, 249, 0.45);
-      box-shadow: 0 0 18px rgba(103, 232, 249, 0.25);
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(148, 163, 184, 0.22));
+      border: 1px solid rgba(249, 115, 22, 0.5);
+      box-shadow: 0 0 18px rgba(249, 115, 22, 0.2);
     }
 
     .hud-stats {
@@ -153,20 +155,20 @@
       gap: 0.55rem;
       padding: 0.55rem 0.85rem;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(251, 191, 36, 0.34);
-      box-shadow: 0 0 14px rgba(251, 191, 36, 0.18);
+      background: rgba(18, 22, 26, 0.86);
+      border: 1px solid rgba(249, 115, 22, 0.36);
+      box-shadow: 0 0 14px rgba(249, 115, 22, 0.14);
     }
 
     .mission-badge span {
       font-size: 0.65rem;
-      color: var(--amber);
+      color: #fbbf24;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .mission-badge strong {
-      color: #fff7d6;
+      color: #fff4cb;
       font-size: 0.82rem;
       letter-spacing: 0.08em;
     }
@@ -187,7 +189,7 @@
       font-size: 1.1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #fef3c7;
+      color: #f3f4f6;
       font-weight: 700;
     }
 
@@ -200,9 +202,9 @@
       font-size: 0.64rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(52, 211, 153, 0.3);
-      color: #bbf7d0;
+      background: rgba(249, 115, 22, 0.12);
+      border: 1px solid rgba(249, 115, 22, 0.38);
+      color: #fed7aa;
     }
 
     .custom-form {
@@ -225,40 +227,40 @@
 
     .neon-input {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(17, 22, 27, 0.92);
       color: #eff6ff;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.08);
     }
 
     .neon-input:focus {
       outline: none;
-      border-color: rgba(251, 191, 36, 0.7);
-      box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 16px rgba(251, 191, 36, 0.18), inset 0 0 8px rgba(251, 191, 36, 0.08);
+      border-color: rgba(249, 115, 22, 0.7);
+      box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.28), 0 0 16px rgba(249, 115, 22, 0.14), inset 0 0 8px rgba(249, 115, 22, 0.08);
       transform: translateY(-1px);
     }
 
     .neon-button {
       transition: all 0.25s ease;
-      border: 1px solid rgba(251, 191, 36, 0.45);
-      background: linear-gradient(135deg, rgba(251, 191, 36, 0.98), rgba(244, 114, 182, 0.95));
-      color: #1a1215;
+      border: 1px solid rgba(251, 146, 60, 0.5);
+      background: linear-gradient(135deg, rgba(251, 146, 60, 0.96), rgba(234, 88, 12, 0.95));
+      color: #1a120d;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      box-shadow: 0 0 18px rgba(251, 191, 36, 0.2), inset 0 1px 0 rgba(255,255,255,0.28);
+      box-shadow: 0 0 18px rgba(249, 115, 22, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
     }
 
     .neon-button:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 0 24px rgba(244, 114, 182, 0.32), 0 0 18px rgba(251, 191, 36, 0.22);
+      box-shadow: 0 0 24px rgba(249, 115, 22, 0.26), 0 0 18px rgba(251, 146, 60, 0.18);
     }
 
     .refresh-button {
-      border: 1px solid rgba(103, 232, 249, 0.28);
-      background: rgba(15, 23, 42, 0.82);
-      color: #dbeafe;
-      box-shadow: inset 0 0 12px rgba(103, 232, 249, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(18, 22, 27, 0.8);
+      color: #e2e8f0;
+      box-shadow: inset 0 0 12px rgba(148, 163, 184, 0.06);
     }
 
     .refresh-button:hover {
@@ -406,11 +408,11 @@
     </section>
   </main>
 
-  <div id="toast" class="fixed bottom-6 right-6 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 glass-card px-6 py-4 rounded-xl border border-amber-400/30 flex items-center gap-3 shadow-2xl">
+  <div id="toast" class="fixed bottom-6 right-6 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 glass-card px-6 py-4 rounded-xl border border-orange-400/30 flex items-center gap-3 shadow-2xl">
     <span class="text-2xl" id="toastIcon">✨</span>
     <div>
-      <h4 id="toastTitle" class="font-semibold text-amber-200 text-sm">Notification</h4>
-      <p id="toastMessage" class="text-amber-100/70 text-xs mt-0.5">Message</p>
+      <h4 id="toastTitle" class="font-semibold text-orange-200 text-sm">Notification</h4>
+      <p id="toastMessage" class="text-slate-200/80 text-xs mt-0.5">Message</p>
     </div>
   </div>
 
